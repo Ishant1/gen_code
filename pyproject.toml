@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "gen-code"
+version = "0.1.0"
+description = "repo for gen ai hack for everything code"
+authors = ["Ishant Aggarwal <iagg1946@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
