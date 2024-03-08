@@ -6,6 +6,11 @@ def get_llm_model():
 
 def call_llm_chain(inp):
     ...
+
+def append_to_chat_history(user_input, model_response):
+    user_str = "user: " + user_input
+    model_str = "model: " + model_response
+    st.session_state['chat_history'] = f"{st.session_state['chat_history']}\n{user_str}\n{model_str}"
 def understanding_page():
 
     # Initialize session state
@@ -13,6 +18,8 @@ def understanding_page():
         st.session_state['code_understanding_generated'] = []
     if 'code_understanding_past' not in st.session_state:
         st.session_state['code_understanding_past'] = []
+    if 'chat_history' not in st.session_state:
+        st.session_state['chat_history'] = ""
 
     # Create text area to get input from user
     def get_text():
@@ -39,10 +46,11 @@ def understanding_page():
         # Run LLM Chain
         output = get_model_response(user_input)
         
+
         # Add generated output to session state history
         st.session_state.code_understanding_past.append(user_input)
         st.session_state.code_understanding_generated.append(output)
-        
+        append_to_chat_history(user_input, output)
     # Display History
     if st.session_state['code_understanding_generated']:
                 
