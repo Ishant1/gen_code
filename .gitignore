@@ -10,6 +10,6 @@ poetry.lock
 poetry.lock
 
 *.pyc
-
+gccli
 Rag/Dataset/GitRepo
 env
