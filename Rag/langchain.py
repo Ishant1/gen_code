@@ -13,14 +13,3 @@ def get_model_response(message: str, model_id: str="text-bison-32k") -> str:
     """
     model = get_langchain_llm(model_id=model_id)
     return model.invoke(message)
-
-
-
-
-
-
-
-
-
-
-

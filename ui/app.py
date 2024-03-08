@@ -57,8 +57,6 @@ if st.session_state['status'] == 'repo_cloned':
     if page == page_navigation[0]:
         st.title(page_navigation[0])
         if st.session_state['dataExtractor']:
-            repo_text = st.session_state['dataExtractor'].get_all_text()
-            st.write(repo_text)
             learning_page()
 
     elif page == page_navigation[1]:

@@ -1,8 +1,14 @@
 import streamlit as st
 
+from Rag.Models.prompts import get_prompt_for_learning
+from Rag.langchain import get_model_response
+
+
 def get_model_output():
     return "Hello World"
 
+
 def learning_page():
-    data = get_model_output()
-    st.write(data)
+    codebase = st.session_state['dataExtractor'].get_all_text()
+    output = get_model_response(get_prompt_for_learning(codebase))
+    st.write(output)
