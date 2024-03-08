@@ -1,4 +1,4 @@
-from langchain.llms import VertexAI
+from langchain_google_vertexai import VertexAI
 from langchain.embeddings import VertexAIEmbeddings
 
 
