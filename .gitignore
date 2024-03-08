@@ -9,3 +9,5 @@ poetry.lock
 
 poetry.lock
 
+*.pyc
+
