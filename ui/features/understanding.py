@@ -1,3 +1,4 @@
+from Rag.langchain import get_model_response
 import streamlit as st
 
 def get_llm_model():
@@ -36,7 +37,7 @@ def understanding_page():
 
         # @TODO: Update with the real llm funciton
         # Run LLM Chain
-        output = call_llm_chain(user_input)
+        output = get_model_response(user_input)
         
         # Add generated output to session state history
         st.session_state.code_understanding_past.append(user_input)
